@@ -3,7 +3,7 @@ require 'faker'
 
 describe EmployeesController do
   before(:each) do
-    @employee = Employee.create(
+    @employee = Employee.create!(
       first_name: Faker::Name.unique.first_name,
       last_name: Faker::Name.unique.last_name,
       position: Faker::Job.position,
@@ -25,7 +25,7 @@ describe EmployeesController do
 
     it 'returns a json with all employees' do
       employees = JSON.parse(response.body)
-      expect(employees.size).to eq 1
+      expect(employees.size).to eq(1)
     end
   end
 
