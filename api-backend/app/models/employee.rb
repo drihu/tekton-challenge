@@ -6,4 +6,6 @@ class Employee < ApplicationRecord
   validates :phone_number, presence: true
 
   enum gender: { male: 0, female: 1 }
+
+  has_one_attached :avatar
 end

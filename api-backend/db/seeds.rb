@@ -8,14 +8,19 @@
 require 'faker'
 
 puts 'Create Employees'.upcase
-30.times do
-  Employee.create!(
+30.times do |index|
+  employee = Employee.create!(
     first_name: Faker::Name.unique.first_name,
     last_name: Faker::Name.unique.last_name,
     position: Faker::Job.position,
     email: Faker::Internet.unique.email,
     phone_number: Faker::PhoneNumber.unique.cell_phone_with_country_code,
-    gender: [0, 1][rand(2)],
+    gender: Faker::Gender.binary_type.downcase,
     birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
+  )
+  employee.avatar.attach(
+    io: File.open(Rails.root.join("db/avatars/image-#{index + 1}.png")),
+    filename: "image-#{index + 1}.png",
+    content_type: 'image/png',
   )
 end
