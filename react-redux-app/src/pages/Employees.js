@@ -1,9 +1,15 @@
 import React from 'react';
 
-import { Container } from '../components/StyledComponents';
+import { Container, Title } from '../components/StyledComponents';
+import EmployeesList from '../features/employees/EmployeesList';
 
 const Employees = () => {
-  return <Container>Employees</Container>;
+  return (
+    <Container>
+      <Title>Employees</Title>
+      <EmployeesList />
+    </Container>
+  );
 };
 
 export default Employees;

@@ -1,0 +1,40 @@
+export const API_ROOT = 'http://localhost:3000';
+
+export const employees = [
+  {
+    id: 18,
+    first_name: 'Alissa',
+    last_name: 'Sawayn',
+    position: 'Coordinator',
+    email: 'margert.wintheiser@hayes-howe.co',
+    phone_number: '+236 475.718.7153',
+    gender: 'female',
+    birthday: '1996-01-08',
+    created_at: '2020-08-06T03:43:25.347Z',
+    updated_at: '2020-08-06T03:43:25.386Z',
+  },
+  {
+    id: 9,
+    first_name: 'Camila',
+    last_name: 'Haag',
+    position: 'Manager',
+    email: 'alvina_mcclure@rice-fahey.name',
+    phone_number: '+503 888-360-3827',
+    gender: 'female',
+    birthday: '1959-12-24',
+    created_at: '2020-08-06T03:43:24.690Z',
+    updated_at: '2020-08-06T03:43:24.714Z',
+  },
+  {
+    id: 19,
+    first_name: 'Darlena',
+    last_name: 'Nienow',
+    position: 'Administrator',
+    email: 'leland@kshlerin.co',
+    phone_number: '+677 492-248-3796',
+    gender: 'female',
+    birthday: '1985-05-05',
+    created_at: '2020-08-06T03:43:25.440Z',
+    updated_at: '2020-08-06T03:43:25.472Z',
+  },
+];

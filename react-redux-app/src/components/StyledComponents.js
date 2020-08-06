@@ -5,3 +5,10 @@ export const Container = styled.div`
   min-height: 100vh;
   padding: 30px;
 `;
+
+export const Title = styled.h1`
+  margin-bottom: 30px;
+  font-family: Ubuntu;
+  font-size: 2rem;
+  font-weight: 700;
+`;
