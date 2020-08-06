@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const LogoIcon = ({ width, height, color }) => (
+export const LogoIcon = ({ width, height, color = '#333333' }) => (
   <svg
     width={width}
     height={height}
@@ -20,7 +20,7 @@ export const LogoIcon = ({ width, height, color }) => (
   </svg>
 );
 
-export const HomeIcon = ({ width, height, color }) => (
+export const HomeIcon = ({ width, height, color = '#333333' }) => (
   <svg
     width={width}
     height={height}
@@ -34,7 +34,7 @@ export const HomeIcon = ({ width, height, color }) => (
   </svg>
 );
 
-export const EmployeesIcon = ({ width, height, color }) => (
+export const EmployeesIcon = ({ width, height, color = '#333333' }) => (
   <svg
     width={width}
     height={height}
@@ -52,7 +52,7 @@ export const EmployeesIcon = ({ width, height, color }) => (
   </svg>
 );
 
-export const PettyCashIcon = ({ width, height, color }) => (
+export const PettyCashIcon = ({ width, height, color = '#333333' }) => (
   <svg
     id="Layer_1"
     width={width}
@@ -74,7 +74,7 @@ export const PettyCashIcon = ({ width, height, color }) => (
   </svg>
 );
 
-export const CashFlowIcon = ({ width, height, color }) => (
+export const CashFlowIcon = ({ width, height, color = '#333333' }) => (
   <svg
     id="Capa_1"
     version="1.1"

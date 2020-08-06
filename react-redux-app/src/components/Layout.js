@@ -5,9 +5,11 @@ import Sidebar from './Sidebar';
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 300px 1fr;
   width: 100%;
   min-height: 100vh;
+  @media (min-width: 960px) {
+    grid-template-columns: 300px 1fr;
+  }
 `;
 
 const Main = styled.main`
