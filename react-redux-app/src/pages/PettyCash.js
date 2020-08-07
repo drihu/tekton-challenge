@@ -7,7 +7,6 @@ const PettyCash = () => {
   const [currency, setCurrency] = useState('');
 
   const handleCurrency = (event) => {
-    console.log(event.target.value);
     setCurrency(event.target.value);
   };
 

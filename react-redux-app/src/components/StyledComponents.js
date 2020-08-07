@@ -15,16 +15,17 @@ export const Title = styled.h1`
 
 export const Table = styled.table`
   width: 100%;
+  background: #ffffff;
   border-collapse: collapse;
   border-radius: 5px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 
   thead {
-    background: #ffffff;
-
     th {
       padding: 20px;
+      background: #ffffff;
+      border-bottom: 1px solid #dddddd;
       font-family: Hind;
       font-weight: 500;
       line-height: 1;
@@ -34,11 +35,8 @@ export const Table = styled.table`
   tbody {
     tr {
       background: #ffffff;
-      border-bottom: 1px solid #dddddd;
-    }
-
-    tr:first-of-type {
       border-top: 1px solid #dddddd;
+      border-bottom: 1px solid #dddddd;
     }
 
     tr:last-child {
