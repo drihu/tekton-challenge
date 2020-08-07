@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Container } from '../components/StyledComponents';
+import TransactionsList from '../features/transactions/TransactionsList';
+import { Container, Title, Select } from '../components/StyledComponents';
 
 const PettyCash = () => {
-  return <Container>Petty Cash</Container>;
+  const [currency, setCurrency] = useState('');
+
+  const handleCurrency = (event) => {
+    console.log(event.target.value);
+    setCurrency(event.target.value);
+  };
+
+  return (
+    <Container>
+      <Title>Petty Cash</Title>
+
+      <Select value={currency} onChange={handleCurrency}>
+        <option>Select currency</option>
+        <option value="USD">USD</option>
+        <option value="PEN">PEN</option>
+      </Select>
+
+      <TransactionsList currency={currency} />
+    </Container>
+  );
 };
 
 export default PettyCash;
