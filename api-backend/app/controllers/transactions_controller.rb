@@ -1,6 +1,12 @@
 class TransactionsController < ApplicationController
   def index
-    transactions = Transaction.all.order(operation_date: :desc)
+    currency = params.fetch('currency', 'USD')
+
+    transactions = Transaction.all.order(operation_date: :asc).map do |transaction|
+      transaction.amount = transaction.amount.exchange_to(currency)
+      transaction
+    end
+
     render json: transactions, status: :ok
   end
 

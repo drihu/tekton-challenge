@@ -7,12 +7,6 @@ class EmployeesController < ApplicationController
   def show
     id = params[:id]
     employee = Employee.find(id)
-
-    if employee.avatar.attached?
-      photo_url = url_for(employee.avatar)
-      render json: employee.as_json.merge(photo_url: photo_url), status: :ok
-    else
-      render json: employee, status: :ok
-    end
+    render json: employee, status: :ok
   end
 end
