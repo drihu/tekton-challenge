@@ -1,4 +1,4 @@
-# Ricardo Huamani Parian - Tekton Labs Challenge
+# Tekton Labs Challenge - Ricardo Huamani Parian
 
 ## Installation
 
@@ -17,7 +17,7 @@ Run the tests
 $ bundle exec rspec
 ```
 
-Run the Rails app
+Run the Rails app (at port 3000)
 
 ```bash
 $ bundle exec rails server
@@ -30,7 +30,7 @@ $ cd react-redux-app
 $ yarn install
 ```
 
-Run the app
+Run the app (at port 3001)
 
 ```bash
 $ yarn start
