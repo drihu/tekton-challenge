@@ -54,7 +54,7 @@ const Sidebar = () => {
           <span>Home</span>
         </MyLink>
 
-        <MyLink exact to="/employees">
+        <MyLink to="/employees">
           <EmployeesIcon width="15" color="#ffc080" />
           <span>Employees</span>
         </MyLink>

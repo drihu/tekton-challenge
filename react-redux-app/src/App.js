@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Employees from './pages/Employees';
+import EmployeeDetail from './pages/EmployeeDetail';
 import PettyCash from './pages/PettyCash';
 import CashFlow from './pages/CashFlow';
 
@@ -16,6 +17,10 @@ function App() {
 
       <Route exact path="/employees">
         <Employees />
+      </Route>
+
+      <Route exact path="/employees/:employeeId">
+        <EmployeeDetail />
       </Route>
 
       <Route exact path="/petty-cash">

@@ -6,7 +6,7 @@ import Sidebar from './Sidebar';
 const Wrapper = styled.div`
   display: grid;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   @media (min-width: 960px) {
     grid-template-columns: 300px 1fr;
   }
@@ -14,8 +14,9 @@ const Wrapper = styled.div`
 
 const Main = styled.main`
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   background: #f2f3f5;
+  overflow: auto;
 `;
 
 const Layout = ({ children }) => {
