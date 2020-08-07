@@ -1,12 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { fetchTransactions } from './transactionsSlice';
 import TransactionItem from './TransactionItem';
 import { Table } from '../../components/StyledComponents';
 
-const TransactionsList = ({ currency }) => {
-  const transactions = useSelector((state) => state.transactions.items);
+const TransactionsList = ({ currency, date }) => {
+  const transactions = useSelector((state) =>
+    state.transactions.items.filter(
+      (transaction) => transaction.operation_date === date
+    )
+  );
+  const [incomes, setIncomes] = useState(null);
+  const [expenses, setExpenses] = useState(null);
   const status = useSelector((state) => state.transactions.status);
   const error = useSelector((state) => state.transactions.error);
   const dispatch = useDispatch();
@@ -20,6 +26,15 @@ const TransactionsList = ({ currency }) => {
   useEffect(() => {
     dispatch(fetchTransactions({ currency }));
   }, [dispatch, currency]);
+
+  useEffect(() => {
+    setIncomes(
+      transactions.filter((transaction) => transaction.group === 'income')
+    );
+    setExpenses(
+      transactions.filter((transaction) => transaction.category === 'other')
+    );
+  }, [date]);
 
   if (status === 'pending') {
     return <h3>Loading transactions ...</h3>;
@@ -40,15 +55,26 @@ const TransactionsList = ({ currency }) => {
 
       {transactions.length > 0 && (
         <tbody>
-          {transactions
-            .filter(
-              (transaction) =>
-                transaction.group === 'income' ||
-                transaction.category === 'other'
-            )
-            .map((transaction) => (
-              <TransactionItem transaction={transaction} key={transaction.id} />
-            ))}
+          {incomes.map((transaction) => (
+            <TransactionItem transaction={transaction} key={transaction.id} />
+          ))}
+
+          {expenses.map((transaction) => (
+            <TransactionItem transaction={transaction} key={transaction.id} />
+          ))}
+
+          <tr>
+            <td>
+              <strong>Total</strong>
+            </td>
+            <td />
+            <td />
+            <td>
+              {(incomes.reduce((acc, tr) => acc + tr.amount_cents, 0) -
+                expenses.reduce((acc, tr) => acc + tr.amount_cents, 0)) /
+                100}
+            </td>
+          </tr>
         </tbody>
       )}
     </Table>

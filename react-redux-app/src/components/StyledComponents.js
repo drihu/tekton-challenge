@@ -55,7 +55,17 @@ export const Table = styled.table`
 export const Select = styled.select`
   width: 40%;
   max-width: 300px;
+  margin-right: 30px;
   margin-bottom: 15px;
+  padding: 8px 15px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+`;
+
+export const Input = styled.input`
+  width: 40%;
+  max-width: 300px;
   padding: 8px 15px;
   background: #ffffff;
   border: 1px solid #cccccc;
