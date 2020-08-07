@@ -1,5 +1,11 @@
 # Tekton Labs Challenge - Ricardo Huamani Parian
 
+## Frameworks / Libraries
+
+- Ruby on Rails
+- React
+- Redux
+
 ## Installation
 
 After cloning it, install dependencies in the Rails application
